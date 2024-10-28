@@ -36,3 +36,22 @@ plugins=(
     zsh-syntax-highlighting
 )
 ```
+
+- Disable ssh with password, using ssh key access only
+Change the config in sshd config
+
+```shell
+sudo vi /etc/sshd_config
+
+# change the option to no
+PubkeyAuthentication yes
+PasswordAuthentication no
+```
+
+- Mount new drive
+  
+```shell
+df -h # view list disk and free storage
+
+sudo mount /dev/sda1 /home/ha/external
+```
